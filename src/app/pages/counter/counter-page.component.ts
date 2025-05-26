@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
@@ -14,15 +14,21 @@ import { RouterOutlet } from '@angular/router';
     `
 })
 export class CounterPageComponent{
-    counter= 15;
+    counter= 10;
+    //signals
+    counterSignal = signal(10);
+
 
     increaseBy(value:number){
         this.counter += value;
+        //this.counterSignal.set(this.counterSignal()+ value);
+
+        this.counterSignal.update((current) => current + value);
     }
-    decreaseBy(value:number){
-        this.counter -=value;
-    }
+
     resetCounter(){
-        this.counter=15;
+        this.counter=0;
+        this.counterSignal.set(0);
+
     }
 }
