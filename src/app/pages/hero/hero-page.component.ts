@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, computed } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
@@ -14,10 +14,21 @@ export class HeroPageComponent{
 name = signal('Ironman');
 age = signal(45);
 
+heroDescription = computed(()=>{
+    const description = `${this.name()} - ${this.age()}`;
+    return description;
+})
+
 getHeroDescription() {
 
-    return `${this.name()} - ${this.age()}`;
+     return `${this.name()} - ${this.age()}`;
 }
+
+capitalizedName = computed(()=>{
+    const capitalized = `${this.name().toUpperCase()}`;
+    return capitalized;
+})
+
 changeHero() {
     this.name.set('Spiderman');
     this.age.set(22);
