@@ -3,7 +3,7 @@ import { RouterOutlet } from '@angular/router';
 
 @Component({
     //templateUrl
-    imports: [RouterOutlet],
+    //imports: [RouterOutlet],
     templateUrl: './counter-page.component.html',
     styles: `
     button{

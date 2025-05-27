@@ -3,7 +3,7 @@ import { RouterOutlet } from '@angular/router';
 
 @Component({
     //templateUrl
-    imports: [RouterOutlet],
+    //imports: [RouterOutlet],
     templateUrl: './hero-page.component.html',
     styles: `
     `
