@@ -3,7 +3,7 @@
         display: flex;
         justify-content: space-around;
         background-color: #212121;
-        color:white;
+        color: white;
         padding: 10px;
     }
 
@@ -12,12 +12,19 @@
         text-decoration: none;
     }
 
+    nav a.active {
+        color: red;
+        text-decoration: underline;
+    }
 </style>
 
 
 <nav>
-    <a routerLink="/">Contador</a>
-    <a [routerLink]="['/hero']">Hero</a>
+    <a routerLink="/" 
+    routerLinkActive="active" 
+    [routerLinkActiveOptions]="{exact:true}"
+    >Contador</a>
+    <a [routerLink]="['/hero']" [routerLinkActive]="'active'">Hero</a>
 
     <!---OTROS-->
 </nav>
