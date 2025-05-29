@@ -10,11 +10,18 @@ interface Character {
 @Component({
    
     templateUrl: './dragonball-page.component.html',
-    // imports:[NgClass]
+    imports:[
+        //NgClass
+    ]
 })
 
 export class DragonballPageComponent {
     
+    //input for character creation use a signal
+    name = signal('Gohan')
+    power = signal(100)
+
+
     characters = signal<Character[]>([
         { id:1 , name: 'Goku', power: 9001 },
         { id:2 , name: 'Vegeta', power: 8000 },
