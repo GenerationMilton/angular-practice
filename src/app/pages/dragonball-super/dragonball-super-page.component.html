@@ -4,7 +4,7 @@
 <section class="row">
     <div class="col-12 col-sm-6">
         <!-- dragonball-character-add -->
-        <!-- Aqui-->
+        <!-- Aqui ()para emitir eventos-->
         <dragonball-character-add
             (newCharacter)="addCharacter($event)"
         ></dragonball-character-add>
@@ -13,9 +13,10 @@
     </div>
 
     <div class="col-12 col-sm-6">
-
+         <!--Aqui [] para recibir eventos-->
         <dragonball-character-list
         listName="Listado de personajes"
+       
         [characters]="characters()"></dragonball-character-list>
        
     </div>
